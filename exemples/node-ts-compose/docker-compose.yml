@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  app:
+    # Build the Dockerfile
+    build: .
+    # Set environment variables
+    environment:
+      - NODE_ENV=production
+    # Mount the current directory to the container's /app directory
+    volumes:
+      - .:/app
+    # Expose port 3000 to the host machine
+    ports:
+      - "3000:3000"
